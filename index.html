@@ -1,1 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ead0c3">
+  <meta name="description" content="A beautiful Mehndi celebration invitation for Fathima Haifa.">
 
+  <title>Fathima Haifa | Mehndi Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #fff8f1;
+      --cream: #f9eee6;
+      --rose: #a45762;
+      --rose-dark: #773d47;
+      --olive: #72715a;
+      --gold: #b28a62;
+      --text: #4d3936;
+      --white: rgba(255,255,255,.78);
+      --shadow: 0 25px 70px rgba(86, 54, 48, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(
+          rgba(249, 235, 226, .08),
+          rgba(249, 235, 226, .08)
+        ),
+        url("mehndi-background.jpeg") top center / cover no-repeat fixed;
+      overflow-x: hidden;
+    }
+
+    button,
+    a {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================
+       OPENING SCREEN
+    ========================= */
+
+    .opening {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(
+          rgba(246, 229, 218, .94),
+          rgba(250, 240, 233, .97)
+        );
+      transition:
+        opacity .9s ease,
+        visibility .9s ease;
+    }
+
+    .opening.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-card {
+      width: min(90%, 520px);
+      padding: 58px 35px;
+      text-align: center;
+      border: 1px solid rgba(178,138,98,.4);
+      background: rgba(255,248,241,.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 220px 220px 35px 35px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .opening-card::before,
+    .opening-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 1px solid rgba(178,138,98,.28);
+      border-radius: 50%;
+    }
+
+    .opening-card::before {
+      top: -75px;
+      left: -75px;
+    }
+
+    .opening-card::after {
+      bottom: -75px;
+      right: -75px;
+    }
+
+    .bismillah {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: clamp(27px, 6vw, 42px);
+      color: var(--rose-dark);
+      margin-bottom: 18px;
+      direction: rtl;
+    }
+
+    .opening-small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 10px;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .opening-title {
+      font-family: "Great Vibes", cursive;
+      color: var(--rose);
+      font-size: clamp(58px, 14vw, 92px);
+      font-weight: 400;
+      line-height: .9;
+      margin-bottom: 20px;
+    }
+
+    .opening-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 34px;
+    }
+
+    .open-btn {
+      border: 0;
+      background: var(--rose-dark);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 999px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+      transition: .3s ease;
+      box-shadow: 0 12px 30px rgba(119,61,71,.22);
+    }
+
+    .open-btn:hover {
+      transform: translateY(-3px);
+      background: var(--rose);
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .page::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,248,241,.04),
+          rgba(255,248,241,.22)
+        );
+      z-index: -1;
+    }
+
+    /* =========================
+       TOP NAV
+    ========================= */
+
+    .topbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: min(92%, 900px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 10px 9px 18px;
+      border: 1px solid rgba(178,138,98,.28);
+      background: rgba(255,248,241,.68);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(78,52,47,.08);
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--rose-dark);
+      letter-spacing: 1px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .circle-btn {
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      border: 1px solid rgba(119,61,71,.15);
+      background: rgba(255,255,255,.55);
+      color: var(--rose-dark);
+      display: grid;
+      place-items: center;
+      transition: .25s ease;
+    }
+
+    .circle-btn:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 130px 20px 80px;
+    }
+
+    .hero-card {
+      width: min(92%, 850px);
+      text-align: center;
+      padding: 80px 30px;
+      position: relative;
+      background: rgba(255,248,241,.35);
+      border: 1px solid rgba(178,138,98,.32);
+      border-radius: 260px 260px 35px 35px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 25px 80px rgba(93,59,52,.08);
+    }
+
+    .arch-line {
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(178,138,98,.2);
+      border-radius: 250px 250px 25px 25px;
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 10px;
+      color: var(--olive);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(75px, 17vw, 150px);
+      font-weight: 400;
+      color: var(--rose);
+      line-height: .9;
+      text-shadow: 0 5px 25px rgba(119,61,71,.08);
+    }
+
+    .hero-name {
+      margin-top: 25px;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      font-size: clamp(30px, 6vw, 52px);
+      color: var(--rose-dark);
+    }
+
+    .divider {
+      width: 100px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px auto;
+      position: relative;
+    }
+
+    .divider::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -55%);
+      padding: 0 10px;
+      background: rgba(250,240,233,.65);
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .hero-text {
+      max-width: 520px;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      line-height: 1.55;
+      color: #634b47;
+    }
+
+    .scroll-indicator {
+      margin-top: 45px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--olive);
+      animation: float 2.4s ease-in-out infinite;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    /* =========================
+       CONTENT SECTIONS
+    ========================= */
+
+    .section {
+      padding: 90px 20px;
+    }
+
+    .section-card {
+      width: min(92%, 850px);
+      margin: auto;
+      background: rgba(255,248,241,.72);
+      border: 1px solid rgba(178,138,98,.25);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 30px;
+      padding: 55px 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--olive);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 7vw, 58px);
+      font-weight: 500;
+      color: var(--rose-dark);
+      margin-bottom: 30px;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote-section {
+      padding-top: 20px;
+    }
+
+    .quote {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: 25px;
+      line-height: 1.8;
+      direction: rtl;
+      color: var(--rose-dark);
+      margin-bottom: 18px;
+    }
+
+    .quote-english {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.5;
+      max-width: 590px;
+      margin: auto;
+    }
+
+    .quote-reference {
+      margin-top: 17px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* =========================
+       DETAILS
+    ========================= */
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .detail-box {
+      padding: 28px 18px;
+      border: 1px solid rgba(178,138,98,.23);
+      background: rgba(255,255,255,.43);
+      border-radius: 22px;
+      transition: .3s ease;
+    }
+
+    .detail-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(93,59,52,.08);
+    }
+
+    .detail-icon {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .detail-label {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 8px;
+    }
+
+    .detail-value {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      color: var(--rose-dark);
+      font-weight: 600;
+    }
+
+    .detail-small {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #765e58;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .count-box {
+      padding: 18px 10px;
+      border: 1px solid rgba(178,138,98,.25);
+      border-radius: 18px;
+      background: rgba(255,255,255,.45);
+    }
+
+    .count-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--rose-dark);
+    }
+
+    .count-label {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--olive);
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .action-btn {
+      border: 1px solid rgba(119,61,71,.2);
+      border-radius: 999px;
+      padding: 14px 22px;
+      background: var(--rose-dark);
+      color: white;
+      font-size: 11px;
+      letter-spacing: 1px;
+      transition: .3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(119,61,71,.18);
+      background: var(--rose);
+    }
+
+    .action-btn.secondary {
+      background: rgba(255,255,255,.65);
+      color: var(--rose-dark);
+    }
+
+    .action-btn.secondary:hover {
+      background: white;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      color: var(--rose-dark);
+      margin-bottom: 7px;
+    }
+
+    .location-address {
+      color: #745b56;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    .rsvp-box {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .rsvp-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      line-height: 1.55;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 55px 20px 70px;
+      text-align: center;
+    }
+
+    .footer-bismillah {
+      font-family: "Noto Naskh Arabic", serif;
+      color: var(--rose-dark);
+      font-size: 23px;
+      direction: rtl;
+      margin-bottom: 15px;
+    }
+
+    .footer-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 19px;
+      color: #765e58;
+    }
+
+    .footer-mark {
+      margin-top: 22px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music-playing {
+      animation: musicPulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%,100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    /* =========================
+       FADE ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      body {
+        background-attachment: scroll;
+      }
+
+      .topbar {
+        top: 10px;
+        width: 94%;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding-top: 105px;
+      }
+
+      .hero-card {
+        padding: 65px 20px;
+        border-radius: 170px 170px 28px 28px;
+      }
+
+      .hero-name {
+        letter-spacing: 4px;
+      }
+
+      .hero-text {
+        font-size: 19px;
+      }
+
+      .section {
+        padding: 65px 14px;
+      }
+
+      .section-card {
+        width: 96%;
+        padding: 42px 18px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        gap: 7px;
+      }
+
+      .count-box {
+        padding: 14px 5px;
+      }
+
+      .count-number {
+        font-size: 28px;
+      }
+
+      .count-label {
+        font-size: 7px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================================================
+       OPENING SCREEN
+  ================================================== -->
+
+  <div class="opening" id="opening">
+
+    <div class="opening-card">
+
+      <div class="bismillah">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+      </div>
+
+      <div class="opening-small">
+        In the name of Allah
+      </div>
+
+      <div class="opening-title">
+        Mehndi
+      </div>
+
+      <div class="opening-name">
+        Fathima Haifa
+      </div>
+
+      <button class="open-btn" onclick="openInvitation()">
+        Open Invitation
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================================================
+       TOP NAVIGATION
+  ================================================== -->
+
+  <nav class="topbar">
+
+    <div class="brand">
+      Fathima Haifa
+    </div>
+
+    <div class="nav-actions">
+
+      <button
+        class="circle-btn"
+        title="Music"
+        onclick="toggleMusic()"
+        id="musicButton">
+        ♫
+      </button>
+
+      <button
+        class="circle-btn"
+        title="Share"
+        onclick="shareInvitation()">
+        ↗
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==================================================
+       MAIN PAGE
+  ================================================== -->
+
+  <main class="page">
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-card">
+
+        <div class="arch-line"></div>
+
+        <div class="hero-kicker">
+          A Beautiful Celebration
+        </div>
+
+        <h1 class="hero-title">
+          Mehndi
+        </h1>
+
+        <div class="hero-name">
+          Fathima Haifa
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="hero-text">
+          With the blessings of Allah and the love of family,
+          we warmly invite you to join us for a beautiful
+          and joyful Mehndi celebration.
+        </p>
+
+        <div class="scroll-indicator">
+          Discover the celebration
+          <span>↓</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ISLAMIC QUOTE -->
+
+    <section class="section quote-section">
+
+      <div class="section-card reveal">
+
+        <div class="section-label">
+          With Love & Blessings
+        </div>
+
+        <div class="quote">
+          وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </div>
+
+        <div class="quote-english">
+          “And He placed between you affection and mercy.”
+        </div>
+
+        <div class="quote-reference">
+          Qur'an · 30:21
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EVENT DETAILS -->
+
+    <section class="section" id="details">
+
+      <div class="section-card reveal">
+
+        <div class="section-label">
+          Save The Date
+        </div>
+
+        <h2 class="section-title">
+          Join Us
+        </h2>
+
+        <div class="details-grid">
+
+          <div class="detail-box">
+
+            <div class="detail-icon">
+              ✦
+            </div>
+
+            <div class="detail-label">
+              Date
+            </div>
+
+            <div class="detail-value">
+              17 September 2026
+            </div>
+
+            <div class="detail-small">
+              Thursday
+            </div>
+
+          </div>
+
+
+          <div class="detail-box">
+
+            <div class="detail-icon">
+              ◷
+            </div>
+
+            <div class="detail-label">
+              Time
+            </div>
+
+            <div class="detail-value">
+              12:00 PM
+            </div>
+
+            <div class="detail-small">
+              Afternoon
+            </div>
+
+          </div>
+
+
+          <div class="detail-box">
+
+            <div class="detail-icon">
+              ♡
+            </div>
+
+            <div class="detail-label">
+              Celebration
+            </div>
+
+            <div class="detail-value">
+              Mehndi
+            </div>
+
+            <div class="detail-small">
+              A joyful gathering
+            </div>
+
+          </div>
+
+
+          <div class="detail-box">
+
+            <div class="detail-icon">
+              ❈
+            </div>
+
+            <div class="detail-label">
+              Honoree
+            </div>
+
+            <div class="detail-value">
+              Fathima Haifa
+            </div>
+
+            <div class="detail-small">
+              With love & duas
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+          <div class="count-box">
+            <div class="count-number" id="days">00</div>
+            <div class="count-label">Days</div>
+          </div>
+
+          <div class="count-box">
+            <div class="count-number" id="hours">00</div>
+            <div class="count-label">Hours</div>
+          </div>
+
+          <div class="count-box">
+            <div class="count-number" id="minutes">00</div>
+            <div class="count-label">Minutes</div>
+          </div>
+
+          <div class="count-box">
+            <div class="count-number" id="seconds">00</div>
+            <div class="count-label">Seconds</div>
+          </div>
+
+        </div>
+
+
+        <!-- CALENDAR BUTTON -->
+
+        <div class="buttons">
+
+          <button
+            class="action-btn"
+            onclick="addToCalendar()">
+            ♧ Add to Calendar
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+
+    <section class="section" id="location">
+
+      <div class="section-card reveal">
+
+        <div class="section-label">
+          The Venue
+        </div>
+
+        <h2 class="section-title">
+          Where We Meet
+        </h2>
+
+        <div class="location-name">
+          Rifa Garden
+        </div>
+
+        <div class="location-address">
+          Bajpe
+        </div>
+
+        <div class="buttons">
+
+          <a
+            class="action-btn"
+            href="https://maps.app.goo.gl/FH5aED9JZUPfSVmT7?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer">
+            ♧ View Location
+          </a>
+
+          <button
+            class="action-btn secondary"
+            onclick="copyLocation()">
+            ⧉ Copy Venue
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RSVP -->
+
+    <section class="section" id="rsvp">
+
+      <div class="section-card reveal">
+
+        <div class="rsvp-box">
+
+          <div class="section-label">
+            Kindly Respond
+          </div>
+
+          <h2 class="section-title">
+            RSVP
+          </h2>
+
+          <p class="rsvp-text">
+            Your presence will make this celebration
+            even more beautiful. We would be delighted
+            to celebrate this special day with you.
+          </p>
+
+          <div class="buttons">
+
+            <button
+              class="action-btn"
+              onclick="rsvpWhatsApp()">
+              ♡ RSVP on WhatsApp
+            </button>
+
+            <button
+              class="action-btn secondary"
+              onclick="shareInvitation()">
+              ↗ Share Invitation
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="section">
+
+      <div class="section-card reveal">
+
+        <div class="bismillah">
+          الْحَمْدُ لِلَّهِ
+        </div>
+
+        <h2 class="section-title">
+          With Love & Duas
+        </h2>
+
+        <p class="hero-text">
+          May Allah bless this beautiful occasion
+          with happiness, barakah, love and countless
+          beautiful memories.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <div class="footer-bismillah">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </div>
+
+    <div class="footer-text">
+      Fathima Haifa · Mehndi Celebration
+    </div>
+
+    <div class="footer-mark">
+      17 · 09 · 2026
+    </div>
+
+  </footer>
+
+
+  <!-- ==================================================
+       OPTIONAL MUSIC
+       
+       If you later add "music.mp3" to the repository,
+       this button will automatically use it.
+  ================================================== -->
+
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <script>
+
+    /* ==================================================
+       BASIC SETTINGS
+    ================================================== */
+
+    const EVENT_NAME = "Fathima Haifa Mehndi";
+    const EVENT_DATE = "2026-09-17T12:00:00+05:30";
+
+    const VENUE = "Rifa Garden, Bajpe";
+
+    const MAP_LINK =
+      "https://maps.app.goo.gl/FH5aED9JZUPfSVmT7?g_st=ic";
+
+
+    /*
+      ADD CLIENT'S WHATSAPP NUMBER HERE LATER.
+
+      Example:
+      const WHATSAPP_NUMBER = "918088590273";
+
+      Use country code.
+      Do NOT use + sign or spaces.
+    */
+
+    const WHATSAPP_NUMBER = "";
+
+
+    /* ==================================================
+       OPEN INVITATION
+    ================================================== */
+
+    function openInvitation() {
+
+      const opening = document.getElementById("opening");
+
+      opening.classList.add("hide");
+
+      document.body.style.overflow = "auto";
+
+      setTimeout(() => {
+
+        document.getElementById("details").scrollIntoView({
+          behavior: "smooth"
+        });
+
+      }, 700);
+
+    }
+
+
+    /* ==================================================
+       MUSIC
+    ================================================== */
+
+    let musicStarted = false;
+
+    function toggleMusic() {
+
+      const audio =
+        document.getElementById("backgroundMusic");
+
+      const button =
+        document.getElementById("musicButton");
+
+      /*
+        Browser security normally blocks
+        automatic audio until user interacts.
+      */
+
+      if (!musicStarted) {
+
+        audio.play()
+          .then(() => {
+
+            musicStarted = true;
+            button.classList.add("music-playing");
+            button.innerHTML = "❚❚";
+
+          })
+          .catch(() => {
+
+            alert(
+              "To enable music, add a file named music.mp3 to your GitHub repository."
+            );
+
+          });
+
+      } else {
+
+        if (audio.paused) {
+
+          audio.play();
+
+          button.classList.add("music-playing");
+          button.innerHTML = "❚❚";
+
+        } else {
+
+          audio.pause();
+
+          button.classList.remove("music-playing");
+          button.innerHTML = "♫";
+
+        }
+
+      }
+
+    }
+
+
+    /* ==================================================
+       COUNTDOWN
+    ================================================== */
+
+    function updateCountdown() {
+
+      const target =
+        new Date(EVENT_DATE).getTime();
+
+      const now =
+        new Date().getTime();
+
+      const difference =
+        target - now;
+
+
+      if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+
+      }
+
+
+      const days =
+        Math.floor(
+          difference / (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (difference / (1000 * 60 * 60)) % 24
+        );
+
+      const minutes =
+        Math.floor(
+          (difference / (1000 * 60)) % 60
+        );
+
+      const seconds =
+        Math.floor(
+          (difference / 1000) % 60
+        );
+
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /* ==================================================
+       ADD TO CALENDAR
+    ================================================== */
+
+    function addToCalendar() {
+
+      const start =
+        "20260917T120000";
+
+      const end =
+        "20260917T150000";
+
+      const calendarData =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fathima Haifa//Mehndi Invitation//EN
+BEGIN:VEVENT
+UID:fathima-haifa-mehndi-2026@example.com
+DTSTAMP:20260830T000000Z
+DTSTART;TZID=Asia/Kolkata:${start}
+DTEND;TZID=Asia/Kolkata:${end}
+SUMMARY:Fathima Haifa Mehndi
+LOCATION:Rifa Garden, Bajpe
+DESCRIPTION:Mehndi celebration of Fathima Haifa.\\n\\nLocation: ${MAP_LINK}
+URL:${MAP_LINK}
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob =
+        new Blob(
+          [calendarData],
+          { type: "text/calendar;charset=utf-8" }
+        );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
+
+      link.href = url;
+      link.download =
+        "Fathima-Haifa-Mehndi.ics";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(url);
+
+    }
+
+
+    /* ==================================================
+       RSVP WHATSAPP
+    ================================================== */
+
+    function rsvpWhatsApp() {
+
+      if (!WHATSAPP_NUMBER) {
+
+        alert(
+          "WhatsApp number is not added yet. Add the client's WhatsApp number inside the WHATSAPP_NUMBER setting in this file."
+        );
+
+        return;
+
+      }
+
+
+      const message =
+`Assalamu Alaikum,
+
+I would like to confirm my presence for Fathima Haifa's Mehndi celebration.
+
+Date: 17 September 2026
+Time: 12:00 PM
+Venue: Rifa Garden, Bajpe
+
+JazakAllah Khair.`;
+
+      const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+
+
+    /* ==================================================
+       SHARE INVITATION
+    ================================================== */
+
+    async function shareInvitation() {
+
+      const shareData = {
+
+        title:
+          "Fathima Haifa | Mehndi Invitation",
+
+        text:
+          "You are warmly invited to Fathima Haifa's Mehndi celebration on 17 September 2026 at Rifa Garden, Bajpe.",
+
+        url:
+          window.location.href
+
+      };
+
+
+      if (
+        navigator.share
+      ) {
+
+        try {
+
+          await navigator.share(shareData);
+
+        } catch (error) {
+
+          console.log(
+            "Share cancelled."
+          );
+
+        }
+
+      } else {
+
+        try {
+
+          await navigator.clipboard.writeText(
+            window.location.href
+          );
+
+          alert(
+            "Invitation link copied!"
+          );
+
+        } catch (error) {
+
+          alert(
+            "Copy this page URL to share the invitation."
+          );
+
+        }
+
+      }
+
+    }
+
+
+    /* ==================================================
+       COPY LOCATION
+    ================================================== */
+
+    function copyLocation() {
+
+      const locationText =
+        "Rifa Garden, Bajpe";
+
+      navigator.clipboard
+        .writeText(locationText)
+        .then(() => {
+
+          alert(
+            "Venue copied: Rifa Garden, Bajpe"
+          );
+
+        })
+        .catch(() => {
+
+          alert(
+            locationText
+          );
+
+        });
+
+    }
+
+
+    /* ==================================================
+       SCROLL REVEAL ANIMATION
+    ================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.15
+        }
+
+      );
+
+
+    revealElements.forEach(
+      (element) => {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+
+    /* ==================================================
+       PAGE INITIAL STATE
+    ================================================== */
+
+    document.body.style.overflow = "hidden";
+
+
+    /* ==================================================
+       KEYBOARD ACCESSIBILITY
+    ================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          openInvitation();
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
