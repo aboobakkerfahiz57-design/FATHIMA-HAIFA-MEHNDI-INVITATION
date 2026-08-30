@@ -727,6 +727,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
@@ -757,11 +758,11 @@
       </div>
 
       <div class="opening-title">
-        Mehendi
+        Mehendi of
       </div>
 
       <div class="opening-name">
-        Fathima Haifa
+        FATHIMA HAIFA
       </div>
 
       <button class="open-btn" onclick="openInvitation()">
@@ -828,7 +829,7 @@
         </div>
 
         <div class="hero-name">
-          Fathima Haifa
+          FATHIMA HAIFA
         </div>
 
         <div class="divider"></div>
@@ -1048,7 +1049,7 @@
 
           <a
             class="action-btn"
-            href="https://maps.app.goo.gl/wdUw16KX3P11uUGW7?g_st=ic"
+            href="https://maps.app.goo.gl/q42avviwF412mq9EA?g_st=ic"
             target="_blank"
             rel="noopener noreferrer">
             ♧ View Location
@@ -1177,12 +1178,15 @@
     ================================================== */
 
     const EVENT_NAME = "Fathima Haifa Mehendi";
-    const EVENT_DATE = "2026-09-17T12:00:00+05:30";
 
-    const VENUE = "Rifa Garden, Bajpe";
+    const EVENT_DATE =
+      "2026-09-17T12:00:00+05:30";
+
+    const VENUE =
+      "Rifa Garden, Bajpe";
 
     const MAP_LINK =
-      "https://maps.app.goo.gl/wdUw16KX3P11uUGW7?g_st=ic";
+      "https://maps.app.goo.gl/q42avviwF412mq9EA?g_st=ic";
 
 
     /*
@@ -1209,13 +1213,15 @@
 
       opening.classList.add("hide");
 
-      document.body.style.overflow = "auto";
+      document.body.style.overflow =
+        "auto";
 
       setTimeout(() => {
 
-        document.getElementById("details").scrollIntoView({
-          behavior: "smooth"
-        });
+        document.getElementById("details")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
 
       }, 700);
 
@@ -1231,10 +1237,14 @@
     function toggleMusic() {
 
       const audio =
-        document.getElementById("backgroundMusic");
+        document.getElementById(
+          "backgroundMusic"
+        );
 
       const button =
-        document.getElementById("musicButton");
+        document.getElementById(
+          "musicButton"
+        );
 
 
       if (!musicStarted) {
@@ -1306,10 +1316,21 @@
 
       if (difference <= 0) {
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById(
+          "days"
+        ).textContent = "00";
+
+        document.getElementById(
+          "hours"
+        ).textContent = "00";
+
+        document.getElementById(
+          "minutes"
+        ).textContent = "00";
+
+        document.getElementById(
+          "seconds"
+        ).textContent = "00";
 
         return;
 
@@ -1336,21 +1357,28 @@
 
       const seconds =
         Math.floor(
-          (difference /
-          1000) % 60
+          (difference / 1000) % 60
         );
 
 
-      document.getElementById("days").textContent =
+      document.getElementById(
+        "days"
+      ).textContent =
         String(days).padStart(2, "0");
 
-      document.getElementById("hours").textContent =
+      document.getElementById(
+        "hours"
+      ).textContent =
         String(hours).padStart(2, "0");
 
-      document.getElementById("minutes").textContent =
+      document.getElementById(
+        "minutes"
+      ).textContent =
         String(minutes).padStart(2, "0");
 
-      document.getElementById("seconds").textContent =
+      document.getElementById(
+        "seconds"
+      ).textContent =
         String(seconds).padStart(2, "0");
 
     }
@@ -1462,7 +1490,9 @@ JazakAllah Khair.`;
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+          message
+        );
 
 
       window.open(
