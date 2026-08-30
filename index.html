@@ -290,7 +290,7 @@
 
     .hero-title {
       font-family: "Great Vibes", cursive;
-      font-size: clamp(75px, 17vw, 150px);
+      font-size: clamp(60px, 14vw, 115px);
       font-weight: 400;
       color: var(--rose);
       line-height: .9;
@@ -727,7 +727,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
@@ -735,7 +734,6 @@
         animation: none !important;
         transition: none !important;
       }
-
     }
   </style>
 </head>
@@ -825,9 +823,9 @@
           A Beautiful Celebration
         </div>
 
-        <h1 class="hero-title">
-          Mehendi
-        </h1>
+        <div class="hero-title">
+          Mehendi of
+        </div>
 
         <div class="hero-name">
           Fathima Haifa
@@ -1165,9 +1163,6 @@
 
   <!-- ==================================================
        OPTIONAL MUSIC
-       
-       If you later add "music.mp3" to the repository,
-       this button will automatically use it.
   ================================================== -->
 
   <audio id="backgroundMusic" loop preload="none">
@@ -1209,7 +1204,8 @@
 
     function openInvitation() {
 
-      const opening = document.getElementById("opening");
+      const opening =
+        document.getElementById("opening");
 
       opening.classList.add("hide");
 
@@ -1240,10 +1236,6 @@
       const button =
         document.getElementById("musicButton");
 
-      /*
-        Browser security normally blocks
-        automatic audio until user interacts.
-      */
 
       if (!musicStarted) {
 
@@ -1251,7 +1243,11 @@
           .then(() => {
 
             musicStarted = true;
-            button.classList.add("music-playing");
+
+            button.classList.add(
+              "music-playing"
+            );
+
             button.innerHTML = "❚❚";
 
           })
@@ -1269,14 +1265,20 @@
 
           audio.play();
 
-          button.classList.add("music-playing");
+          button.classList.add(
+            "music-playing"
+          );
+
           button.innerHTML = "❚❚";
 
         } else {
 
           audio.pause();
 
-          button.classList.remove("music-playing");
+          button.classList.remove(
+            "music-playing"
+          );
+
           button.innerHTML = "♫";
 
         }
@@ -1316,22 +1318,26 @@
 
       const days =
         Math.floor(
-          difference / (1000 * 60 * 60 * 24)
+          difference /
+          (1000 * 60 * 60 * 24)
         );
 
       const hours =
         Math.floor(
-          (difference / (1000 * 60 * 60)) % 24
+          (difference /
+          (1000 * 60 * 60)) % 24
         );
 
       const minutes =
         Math.floor(
-          (difference / (1000 * 60)) % 60
+          (difference /
+          (1000 * 60)) % 60
         );
 
       const seconds =
         Math.floor(
-          (difference / 1000) % 60
+          (difference /
+          1000) % 60
         );
 
 
@@ -1352,7 +1358,10 @@
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+    setInterval(
+      updateCountdown,
+      1000
+    );
 
 
     /* ==================================================
@@ -1366,6 +1375,7 @@
 
       const end =
         "20260917T150000";
+
 
       const calendarData =
 `BEGIN:VCALENDAR
@@ -1383,22 +1393,30 @@ URL:${MAP_LINK}
 END:VEVENT
 END:VCALENDAR`;
 
+
       const blob =
         new Blob(
           [calendarData],
-          { type: "text/calendar;charset=utf-8" }
+          {
+            type:
+              "text/calendar;charset=utf-8"
+          }
         );
+
 
       const url =
         URL.createObjectURL(blob);
 
+
       const link =
         document.createElement("a");
+
 
       link.href = url;
 
       link.download =
         "Fathima-Haifa-Mehendi.ics";
+
 
       document.body.appendChild(link);
 
@@ -1439,11 +1457,13 @@ Venue: Rifa Garden, Bajpe
 
 JazakAllah Khair.`;
 
+
       const whatsappURL =
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
         encodeURIComponent(message);
+
 
       window.open(
         whatsappURL,
@@ -1473,13 +1493,13 @@ JazakAllah Khair.`;
       };
 
 
-      if (
-        navigator.share
-      ) {
+      if (navigator.share) {
 
         try {
 
-          await navigator.share(shareData);
+          await navigator.share(
+            shareData
+          );
 
         } catch (error) {
 
@@ -1523,6 +1543,7 @@ JazakAllah Khair.`;
       const locationText =
         "Rifa Garden, Bajpe";
 
+
       navigator.clipboard
         .writeText(locationText)
         .then(() => {
@@ -1548,7 +1569,9 @@ JazakAllah Khair.`;
     ================================================== */
 
     const revealElements =
-      document.querySelectorAll(".reveal");
+      document.querySelectorAll(
+        ".reveal"
+      );
 
 
     const revealObserver =
@@ -1596,7 +1619,8 @@ JazakAllah Khair.`;
        PAGE INITIAL STATE
     ================================================== */
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+      "hidden";
 
 
     /* ==================================================
